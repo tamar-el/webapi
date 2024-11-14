@@ -30,3 +30,4 @@ T:\Group A\C#\תמר אלמקייס\פרוייקט clinic\clinicProject\clinicPr
 T:\Group A\C#\תמר אלמקייס\פרוייקט clinic\clinicProject\clinicProject\obj\Debug\net8.0\clinicProject.pdb
 T:\Group A\C#\תמר אלמקייס\פרוייקט clinic\clinicProject\clinicProject\obj\Debug\net8.0\clinicProject.genruntimeconfig.cache
 T:\Group A\C#\תמר אלמקייס\פרוייקט clinic\clinicProject\clinicProject\obj\Debug\net8.0\ref\clinicProject.dll
+T:\Group A\C#\תמר אלמקייס\פרוייקט clinic\clinicProject\clinicProject\obj\Debug\net8.0\clinicProject.sourcelink.json

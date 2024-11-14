@@ -9,15 +9,16 @@ namespace clinicProject.Controllers
     [ApiController]
     public class RoutesController : ControllerBase
     {
-        private static List<ClassRoutes> routes =new List<ClassRoutes> {
-            new ClassRoutes{Dname="doctor1",idname="patient" },
-            new ClassRoutes{Dname="doctor2",idname="patient" }
-        };
+        private readonly DataContext _dataContext;
+        public RoutesController(DataContext dataContext)
+        {
+            _dataContext = dataContext;
+        }
         // GET: api/<RoutesController>
         [HttpGet]
         public  IEnumerable<ClassRoutes> Get()
         {
-            return routes;
+            return _dataContext.routes;
         }
 
         // GET api/<RoutesController>/5
@@ -31,20 +32,24 @@ namespace clinicProject.Controllers
         [HttpPost]
         public ClassRoutes Post([FromBody] ClassRoutes value)
         {
-            routes.Add(value);
+            _dataContext.routes.Add(value);
             return value;
         }
 
         // PUT api/<RoutesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] ClassRoutes value)
         {
+            var index = _dataContext.routes.FindIndex(x => x.idname == id);
+            _dataContext.routes[index] = value;
         }
 
         // DELETE api/<RoutesController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var index=_dataContext.routes.FindIndex(x => x.idname == id);
+            _dataContext.routes.RemoveAt(index);
         }
     }
 }
